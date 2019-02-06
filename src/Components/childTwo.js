@@ -17,8 +17,6 @@ class ChildTwo extends Component {
     }
 
     updateReduxName() {
-        console.log('updateName', this.state.userInputName);
-
         this.props.updateName(this.state.userInputName)
     }
 
@@ -32,8 +30,12 @@ class ChildTwo extends Component {
     }
 }
 
+const mapStateToProps = () => {
+    return {}
+}
+
 const mapDispatchToProps = {
     updateName
 }
 
-export default connect(null, mapDispatchToProps)(ChildTwo)
+export default connect(mapStateToProps, mapDispatchToProps)(ChildTwo)
